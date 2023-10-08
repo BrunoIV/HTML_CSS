@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Theme Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #theme_selector {
+            background-color: #6b59a7;
+            height: 40px;
+            width: 120px; /* 80 (posición final) + 4 (margin izquierdo) + 4 (margin derecho) + 32 (width) */
+            border-radius: 50px;
+            position: relative;
+            display: block;
+            margin: 20px;
+        }
+
+        /* Check oculto que se activa al clickar el label */
+        #hidden_checkbox {
+            display: none;
+        }
+
+        #theme_selector > label {
+            background-color: #fff;
+            display: inline-block;
+            border-radius: 50%;
+            height: 32px;
+            width: 32px;
+            margin: 4px;
+            position: absolute;
+            left: 0;
+            transition: left 2s ease-in-out;
+        }
+
+        /* Al activarse el check (vía click en el label) se ejecuta la animación */
+        #hidden_checkbox:checked ~ label {
+            left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="theme_selector">
+        <input type="checkbox" id="hidden_checkbox">
+        <label for="hidden_checkbox"></label>
+    </div>
+</body>
+</html>
