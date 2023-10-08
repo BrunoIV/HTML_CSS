@@ -47,12 +47,107 @@
             background-color: #fde2bb; 
             transition: all ease 2s;
         }
+
+        /* Cuando pasa a la derecha (sol) los cráteres tiene que desaparecer */
+        #hidden_checkbox:checked ~ label * {
+            background-color: transparent; 
+            transition: all ease 2s;
+        }
+
+
+        /* Cráteres */
+        #theme_selector > label > * {
+            position: absolute;
+            background-color: #efeff7;
+            display: inline-block;
+            border-radius: 50%;
+            transition: all ease 2s;
+        }
+
+        /* Cráteres pequeños (Small) */
+        #theme_selector > label > s {
+            width: 2px;
+            height: 2px;
+        }
+
+        /* Cráteres intermedios (Intermediate) */
+        #theme_selector > label > i {
+            width: 3px;
+            height: 3px;
+        }
+
+        /* Cráteres grandes (Big) */
+        #theme_selector > label > b {
+            width: 6px;
+            height: 6px;
+        }
+
+        #theme_selector > label > :nth-child(1) {
+            top: 7px;
+            left: 3px;
+        }
+
+        #theme_selector > label > :nth-child(2) {
+            top: 14px;
+            left: 6px;
+        }
+
+        #theme_selector > label > :nth-child(3) {
+            top: 8px;
+            left: 10px;
+        }
+
+        #theme_selector > label > :nth-child(4) {
+            top: 5px;
+            left: 21px;
+        }
+
+        #theme_selector > label > :nth-child(5) {
+            top: 13px;
+            left: 29px;
+        }
+
+        #theme_selector > label > :nth-child(6) {
+            top: 16px;
+            left: 24px;
+        }
+
+        #theme_selector > label > :nth-child(7) {
+            top: 24px;
+            left: 8px;
+        }
+
+        #theme_selector > label > :nth-child(8) {
+            top: 23px;
+            left: 11px;
+        }
+
+        #theme_selector > label > :nth-child(9) {
+            top: 20px;
+            left: 15px;
+        }
+
+        #theme_selector > label > :nth-child(10) {
+            top: 23px;
+            left: 16px;
+        }
     </style>
 </head>
 <body>
     <div id="theme_selector">
         <input type="checkbox" id="hidden_checkbox" autocomplete="off">
-        <label for="hidden_checkbox"></label>
+        <label for="hidden_checkbox">
+            <b></b>
+            <i></i>
+            <i></i>
+            <s></s>
+            <s></s>
+            <b></b>
+            <s></s>
+            <i></i>
+            <s></s>
+            <b></b>
+        </label>
     </div>
 </body>
 </html>
