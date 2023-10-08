@@ -37,18 +37,21 @@
             margin: 4px;
             position: absolute;
             left: 0;
-            transition: left 2s ease-in-out;
+            transform: translate(0, 0) rotate(0deg);
+            transition: all ease 2s;
         }
 
         /* Al activarse el check (vía click en el label) se ejecuta la animación */
         #hidden_checkbox:checked ~ label {
-            left: 80px;
+            transform: translate(80px, 0) rotate(90deg);
+            background-color: #fde2bb; 
+            transition: all ease 2s;
         }
     </style>
 </head>
 <body>
     <div id="theme_selector">
-        <input type="checkbox" id="hidden_checkbox">
+        <input type="checkbox" id="hidden_checkbox" autocomplete="off">
         <label for="hidden_checkbox"></label>
     </div>
 </body>
