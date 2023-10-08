@@ -21,6 +21,8 @@
             position: relative;
             display: block;
             margin: 20px;
+            transition: all ease 2s;
+            overflow: hidden;
         }
 
         /* Check oculto que se activa al clickar el label */
@@ -28,6 +30,7 @@
             display: none;
         }
 
+        /* Luna completa */
         #theme_selector > div {
             background-color: #fff;
             display: inline-block;
@@ -39,9 +42,16 @@
             left: 0;
             transform: translate(0, 0) rotate(0deg);
             transition: all ease 2s;
+            z-index: 999;
         }
 
-        /* Al activarse el check (vía click en el label) se ejecuta la animación */
+
+        /* Al activar el modo claro todo el fondo pasa a ser naranja */
+        #hidden_checkbox:checked ~ label {
+            background-color: #f48e70; 
+        }
+
+        /* Al activarse el modo claro (vía click en el label) se ejecuta la animación */
         #hidden_checkbox:checked ~ label > div {
             transform: translate(80px, 0) rotate(90deg);
             background-color: #fde2bb; 
@@ -129,6 +139,29 @@
             top: 23px;
             left: 16px;
         }
+
+
+        #theme_selector svg {
+            top: 14px;
+            position: absolute;
+        }
+
+        #theme_selector svg path {
+            transition: all ease 2s;
+        }
+
+        #theme_selector svg:last-child {
+            top: 20px;
+            left: -5px;
+        }
+
+        #hidden_checkbox:checked ~ label svg path {
+            fill: #b95372;
+        }
+
+        #hidden_checkbox:checked ~ label svg:last-child path {
+            fill: #902f52;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +179,10 @@
                 <s></s>
                 <b></b>
             </div>
+
+            <!-- https://getwaves.io/ -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#68307c" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,117.3C480,139,600,213,720,213.3C840,213,960,139,1080,133.3C1200,128,1320,192,1380,224L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5d296a" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,117.3C480,139,600,213,720,213.3C840,213,960,139,1080,133.3C1200,128,1320,192,1380,224L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
         </label>
 </body>
 </html>
